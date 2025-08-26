@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bento grid</title>
+    <style>
+        body {
+            min-height: 100vh;
+            height: auto;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            border: 1px solid black;
+            width: 80vw;
+            min-height: 110vh;
+            height: auto;
+            margin: auto;
+            margin-top: 2rem;
+            border-radius: 2rem;
+            border: none;
+            /* transform: scale(0.9); */
+        }
+
+        .item {
+            border: 1px solid white;
+            width: 90%;
+            height: 36%;
+            border-radius: 2rem;
+            background-color: hsl(31, 66%, 93%);
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
+        }
+
+        .iki {
+            margin-top: 2rem;
+            background-color: hsl(39, 100%, 71%);
+        }
+
+        .text {
+            font-size: 2.4rem;
+            margin: 0rem 5rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .image-1 {
+            margin-left: 4rem;
+        }
+
+        .text-2 {
+            font-size: 3rem;
+            margin-top: 1rem;
+            margin-left: 2rem;
+        }
+
+        .item-2 {
+            display: grid;
+            grid-template-rows: 3fr 1fr;
+            border: 1px solid black;
+            width: 100%;
+            height: 100%;
+            border-radius: 2rem;
+            gap: 2rem;
+            border: none;
+        }
+
+        .social-schedule {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            border: 1px solid white;
+            width: 100%;
+            height: 100%;
+            border-radius: 2rem;
+            gap: 2rem;
+            border: none;
+
+        }
+
+        .grow-56 {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            border: 1px solid white;
+            width: 96.5%;
+            height: 100%;
+            border-radius: 2rem;
+            gap: 2rem;
+            border: none;
+
+        }
+
+        .social {
+            display: grid;
+            grid-template-rows: 2fr 1.5fr;
+            border: 1px solid white;
+            width: 100%;
+            height: 83%;
+            border-radius: 2rem;
+            gap: 2rem;
+            border: none;
+
+
+        }
+
+        .media {
+            border: 1px solid white;
+            width: 100%;
+            height: 100%;
+            border-radius: 2rem;
+            text-align: center;
+            color: white;
+            background-color: hsl(256, 67%, 59%);
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+        }
+
+        .manage-montain {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid black;
+            width: 100%;
+            height: 100%;
+            border-radius: 2rem;
+            gap: 2rem;
+            border: none;
+        }
+
+        .manage,
+        .mountain {
+            border: 1px solid white;
+            width: 100%;
+            height: 74%;
+            border-radius: 2rem;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+        }
+
+        .schedule {
+            border: 1px solid white;
+            width: 100%;
+            height: 73%;
+            border-radius: 2rem;
+            background-color: hsl(254, 88%, 90%);
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+        }
+
+        .fifty-six,
+        .grow {
+            position: relative;
+            top: -17rem;
+            margin-bottom: 2rem;
+            border: 1px solid white;
+            width: 100%;
+            height: 80%;
+            border-radius: 2rem;
+            box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+        }
+
+        .grow {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 106%;
+            background-color: hsl(256, 67%, 59%);
+        }
+
+        .media-text {
+            font-size: 5rem;
+            margin: 0rem 4rem;
+            text-align: center;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .media-text-2 {
+            letter-spacing: 0.1rem;
+            margin-top: 0.6rem;
+        }
+
+        .manage-image {
+            margin-left: 5rem;
+            margin-top: 1rem;
+
+        }
+
+        .manage-text {
+            font-size: 2rem;
+            margin: 0 1rem;
+            margin-right: 8rem;
+            margin-left: 2rem;
+            margin-bottom: 3rem;
+            color: black;
+        }
+
+        .mountain {
+            z-index: 1000;
+            background-color: hsl(39, 100%, 71%);
+        }
+
+        .mountain-text {
+            font-size: 2rem;
+            margin: 1rem 1rem;
+            margin-right: 8rem;
+            margin-left: 2rem;
+
+            color: black;
+        }
+
+        .mountain-image {
+            position: relative;
+            top: 6rem;
+            left: 2rem;
+
+        }
+
+        .crop-2 {
+            position: relative;
+            top: -100px;
+            display: inline-block;
+            overflow: hidden;
+        }
+
+        .crop-1 {
+            overflow: hidden;
+        }
+
+        .schedule-text {
+            color: black;
+            font-size: 2rem;
+            margin: 3rem 5rem;
+        }
+
+        .schedule-image {
+            position: relative;
+            top: 1rem;
+            left: 9rem;
+        }
+
+        .crop-3 {
+
+            overflow: hidden !important;
+            width: 100%;
+            height: 50%;
+        }
+
+        .schedule-text-2 {
+            color: black;
+            font-size: 1.5rem;
+            margin: 1rem 4rem;
+        }
+
+        .fifty-six-text {
+            font-weight: bold;
+            color: black;
+            font-size: 3.5rem;
+
+        }
+
+        .fifty-six-Text {
+            margin: 2rem;
+        }
+
+        .faster-growth {
+            color: black;
+            font-size: 1.55rem;
+        }
+
+        .fifty-six-image {
+            margin-left: 2rem;
+
+        }
+
+        .grow-text {
+            font-size: 3rem;
+            color: white;
+        }
+
+        div {
+            box-shadow: 2rem;
+        }
+
+        @media screen and (max-width:375px) {
+
+            body {
+                min-height: 100vh;
+                height: auto;
+            }
+
+            .container {
+                width: 96%;
+                height: 100%;
+                display: flex;
+                flex-direction: column-reverse;
+            }
+
+            .item {
+                width: 100%;
+                height: 50%;
+            }
+            .item-2{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .social-schedule,
+            .manage-montain{
+                display: flex;
+                flex-direction: column;
+            }
+            .grow-56 {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            .fifty-six{
+                width: 100%;
+            }
+            .grow,
+            .fifty-six {
+                position: static;
+            }
+            .grow{
+                display: flex;
+                flex-direction:column;
+                margin-bottom: 0;
+                width: 100%;
+            }
+
+            .media-text {
+                font-size: 2.5rem;
+            }
+
+            .social {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .media {
+                display: inline;
+                height: 30%;
+            }
+            .manage{
+                height: 25%;
+            }
+            .manage-image{
+
+                margin-bottom: 0;
+            }
+            .manage-text{
+                font-size: 1.3rem;
+                margin: 1rem;
+                font-weight: bold;
+            }
+            .mountain{
+                height: 32%;
+            }
+
+            .mountain-text{
+                margin:1rem;
+                font-size: 1.3rem;
+                font-weight: bold;
+            }
+            .crop-2{
+                top: -0.01rem;
+                left: -1rem;
+            }
+            .mountain-image{
+                top: 2rem;
+            }
+            .schedule{
+                height: 70%;
+            }
+            .schedule-text{
+                text-align: center;
+                margin: 1rem;
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+            .crop-3{
+                padding: 1rem;
+            }
+            .schedule-image{
+                position: static;
+                width: 80%;
+                height: 80%;
+                margin:auto;
+            }
+            .schedule-text-2{
+                text-align: center;
+                margin: 1rem 3.9rem;
+                font-size: 1rem;
+
+            }
+            .grow-text{
+                font-size: 2rem;
+                margin: 2rem;
+            }
+            .grow-image{
+                margin-top: 2rem;
+            }
+            .fifty-six-image{
+                width: 40%;
+                margin-bottom: 1rem;
+            }
+            .fifty-six-text{
+                font-size: 2rem;
+            }
+            .item{
+                height: 20%;
+            }
+            .text{
+                font-size: 2rem;
+                margin: 1rem 2rem;
+            }
+            .text-2{
+                font-size: 2rem;
+                 margin: 1rem;
+            }
+            .break{
+                display: none;
+            }
+            .image-1{
+                margin: 1rem;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item-1">
+            <div class="item">
+                <p class="text">Create and schedule content <i><span style="color:blue ">quicker.</span></i></p>
+                <img class="image-1" src="../assets/images/illustration-create-post.webp" alt="logo" width="70%">
+            </div>
+            <div class="item iki">
+                <p class="text-2">Write your <br class="break"> content <br class="break"> using AI.</p>
+                <img class="image-1" src="../assets/images/illustration-ai-content.webp" alt="content" width="65%">
+            </div>
+        </div>
+        <div class="item-2">
+            <div class="social-schedule">
+                <div class="social">
+                    <div class="media">
+                        <p class="media-text"> Social Media <span style="color: sandybrown;">10x</span> Faster with AI
+                        </p>
+                        <img src="../assets/images/illustration-five-stars.webp" alt="start" width="25%">
+                        <p class="media-text-2">Over 4,000 5-star reviews</p>
+                    </div>
+                    <div class="manage-montain">
+                        <div class="manage">
+                            <div class="crop-1">
+                                <img class="manage-image" src="../assets/images/illustration-multiple-platforms.webp"
+                                    alt="platforms" width="100%">
+                            </div>,
+                            <p class="manage-text">
+                                Manage multiple accounts and platforms.
+                            </p>
+                        </div>
+
+                        <div class="mountain">
+                            <p class="mountain-text">Maintain a consistent posting schedule.</p>
+                            <div class="crop-2">
+                                <img class="mountain-image" src="../assets/images/illustration-consistent-schedule.webp"
+                                    alt="schedule" width="80%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="schedule">
+                    <p class="schedule-text"> Schedule to social media.</p>
+                    <div class="crop-3">
+                        <img class="schedule-image" src="../assets/images/illustration-schedule-posts.webp" alt="post"
+                            width="100%" height="100%">
+                    </div>
+                    <p class="schedule-text-2"> Optimize post timings to publish content at the perfect time for your
+                        audience.</p>
+                </div>
+            </div>
+            <div class="grow-56">
+                <div class="fifty-six">
+                    <p class="fifty-six-Text"> <span class="fifty-six-text">>56%</span> <br> <span
+                            class="faster-growth">faster audience growth</span> </p>
+                    <img class="fifty-six-image" src="../assets/images/illustration-audience-growth.webp" alt="growth"
+                        width="60%">
+                </div>
+                <div class="grow">
+                    <img class="grow-image" src="../assets/images/illustration-grow-followers.webp" alt="followers"
+                        width="45% " height="80%">
+                    <p class="grow-text">Grow followers <br> with non-stop <br> content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
